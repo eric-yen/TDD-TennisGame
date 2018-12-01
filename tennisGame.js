@@ -21,10 +21,10 @@ var tennisGame = (function() {
             else if ((_player1Score <= 3) && (_player2Score <= 3) && (_player1Score !== _player2Score)) {
                 return _scoreMap[_player1Score] + "-" + _scoreMap[_player2Score];
             }
-            else if ((_player1Score >= 4 || _player2Score >= 4) && Math.abs(_player1Score - _player2Score) === 1) {
-                return this.advancedPlayer() + " Adv";
-            }
-            else if ((_player1Score >= 4 || _player2Score >= 4) && Math.abs(_player1Score - _player2Score) >= 2) {
+            else if (_player1Score >= 4 || _player2Score >= 4) {
+                if (Math.abs(_player1Score - _player2Score) === 1) {
+                    return this.advancedPlayer() + " Adv";
+                }
                 return this.advancedPlayer() + " Win";
             }
             return "undefined";
