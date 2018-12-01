@@ -24,6 +24,9 @@ var tennisGame = (function() {
             else if ((_player1Score >= 4) && (_player1Score - _player2Score === 1)) {
                 return "Player1 Adv";
             }
+            else if ((_player2Score >= 4) && (_player2Score - _player1Score === 1)) {
+                return "Player2 Adv";
+            }
        
             return "Love-All";
         },
