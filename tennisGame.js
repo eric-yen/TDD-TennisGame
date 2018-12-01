@@ -14,7 +14,10 @@ var tennisGame = (function() {
             }
             else if ((_player2Score >= 1) && (_player1Score === 0)) {
                 return "Love-" + _scoreMap[_player2Score];
-            }   
+            }
+            else if ((_player1Score ===1) && (_player1Score === _player2Score)) {
+                return _scoreMap[_player1Score] + "-All";
+            }
             return "Love-All";
         },
 
