@@ -10,14 +10,14 @@ var tennisGame = (function() {
 
     return {
         score: function() {
-            if ((_player1Score <=2) && (_player1Score === _player2Score)) {
+            if (_player1Score === _player2Score) {
+                if (_player1Score >= 3) {
+                    return "Duce";
+                }
                 return _scoreMap[_player1Score] + "-All"; 
             }
             else if ((_player1Score <= 3) && (_player2Score <= 3) && (_player1Score !== _player2Score)) {
                 return _scoreMap[_player1Score] + "-" + _scoreMap[_player2Score];
-            }
-            else if ((_player1Score >= 3) && (_player1Score === _player2Score)) {
-                return "Duce";
             }
             else if ((_player1Score >= 4) && (_player1Score - _player2Score === 1)) {
                 return "Player1 Adv";
