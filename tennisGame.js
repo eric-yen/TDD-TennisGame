@@ -24,11 +24,8 @@ var tennisGame = (function() {
             else if ((_player1Score >= 4 || _player2Score >= 4) && Math.abs(_player1Score - _player2Score) === 1) {
                 return this.advancedPlayer() + " Adv";
             }
-            else if ((_player1Score >= 4) && (_player1Score - _player2Score >= 2)) {
-                return "Player1 Win";
-            }
-            else if ((_player2Score >= 4) && (_player2Score - _player1Score >=2)) {
-                return "Player2 Win";
+            else if ((_player1Score >= 4 || _player2Score >= 4) && Math.abs(_player1Score - _player2Score) >= 2) {
+                return this.advancedPlayer() + " Win";
             }
             return "undefined";
         },
