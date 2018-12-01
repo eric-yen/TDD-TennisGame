@@ -5,6 +5,9 @@ var tennisGame = (function() {
             if (_player1Score === 1) {
                 return "Fifteen-Love";
             }
+            else if (_player1Score === 2) {
+                return "Thirty-Love";
+            }
             return "Love-All";
         },
 

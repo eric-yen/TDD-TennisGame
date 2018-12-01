@@ -15,3 +15,10 @@ describe('Score 1 - 0 Test', function() {
         assert.equal(gameObj.score(), "Fifteen-Love");
     });
 });
+
+describe('Score 2 - 0 Test', function() {
+    it('should return Thirty-Love', function() {
+        gameObj.setPlayer1Score(2);
+        assert.equal(gameObj.score(), "Thirty-Love");
+    });
+});
