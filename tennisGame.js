@@ -33,6 +33,9 @@ var tennisGame = (function() {
             else if ((_player2Score >= 4) && (_player1Score <= 2)) {
                 return "Player2 Win";
             }
+            else if ((_player1Score >=5) && (_player1Score - _player2Score === 2)) {
+                return "Player1 Win";
+            }
 
             return "Love-All";
         },

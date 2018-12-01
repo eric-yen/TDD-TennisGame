@@ -170,3 +170,19 @@ describe('Score 2 - 4 Test', function() {
         assert.equal(gameObj.score(), "Player2 Win");
     });
 });
+
+describe('Score 5 - 3 Test', function() {
+    it('should return Player1 Win', function() {
+        gameObj.setPlayer1Score(5);
+        gameObj.setPlayer2Score(3);
+        assert.equal(gameObj.score(), "Player1 Win");
+    });
+});
+
+describe('Score 6 - 4 Test', function() {
+    it('should return Player1 Win', function() {
+        gameObj.setPlayer1Score(5);
+        gameObj.setPlayer2Score(3);
+        assert.equal(gameObj.score(), "Player1 Win");
+    });
+});
