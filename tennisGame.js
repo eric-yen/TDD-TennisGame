@@ -27,7 +27,7 @@ var tennisGame = (function() {
             else if ((_player2Score >= 4) && (_player2Score - _player1Score === 1)) {
                 return "Player2 Adv";
             }
-            else if ((_player1Score === 4) && (_player2Score ===0)) {
+            else if ((_player1Score >= 4) && (_player2Score <= 2)) {
                 return "Player1 Win";
             }
        
