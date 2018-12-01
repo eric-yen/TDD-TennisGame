@@ -9,10 +9,10 @@ var tennisGame = (function() {
 
     return {
         score: function() {
-            if (_player1Score >= 1) {
+            if ((_player1Score >= 1) && (_player2Score === 0)) {
                 return _scoreMap[_player1Score] + "-Love";
             }
-            else if (_player2Score >= 1) {
+            else if ((_player2Score >= 1) && (_player1Score === 0)) {
                 return "Love-" + _scoreMap[_player2Score];
             }   
             return "Love-All";
