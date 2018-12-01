@@ -1,7 +1,7 @@
 var tennisGame = (function() {
     return {
         score: function() {
-            return "";
+            return "Love-All";
         }
     }
 });
