@@ -18,7 +18,7 @@ var tennisGame = (function() {
                 }
                 return _scoreMap[_player1Score] + "-All"; 
             }
-            else if ((_player1Score <= 3) && (_player2Score <= 3) && (_player1Score !== _player2Score)) {
+            else if ((_player1Score <= 3) && (_player2Score <= 3)) {
                 return _scoreMap[_player1Score] + "-" + _scoreMap[_player2Score];
             }
             return this.advancedPlayer() + this.advOrWin();
