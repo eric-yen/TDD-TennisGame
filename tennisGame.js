@@ -8,6 +8,9 @@ var tennisGame = (function() {
             else if (_player1Score === 2) {
                 return "Thirty-Love";
             }
+            else if (_player1Score === 3) {
+                return "Forty-Love";
+            }
             return "Love-All";
         },
 
