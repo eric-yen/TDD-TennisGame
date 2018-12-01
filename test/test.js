@@ -66,3 +66,11 @@ describe('Score 1 - 1 Test', function() {
         assert.equal(gameObj.score(), "Fifteen-All");
     });
 });
+
+describe('Score 2 - 2 Test', function() {
+    it('should return Thirty-All', function() {
+        gameObj.setPlayer1Score(2);
+        gameObj.setPlayer2Score(2);
+        assert.equal(gameObj.score(), "Thirty-All");
+    });
+});
