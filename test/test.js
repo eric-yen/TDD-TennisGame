@@ -59,6 +59,22 @@ describe('Score 0 - 3 Test', function() {
     });
 });
 
+describe('Score 2 - 1 Test', function() {
+    it('should return Thirty-Fifteen', function() {
+        gameObj.setPlayer1Score(2);
+        gameObj.setPlayer2Score(1);
+        assert.equal(gameObj.score(), "Thirty-Fifteen");
+    });
+});
+
+describe('Score 1 - 2 Test', function() {
+    it('should return Fifteen-Thirty', function() {
+        gameObj.setPlayer1Score(1);
+        gameObj.setPlayer2Score(2);
+        assert.equal(gameObj.score(), "Fifteen-Thirty");
+    });
+});
+
 describe('Score 1 - 1 Test', function() {
     it('should return Fifteen-All', function() {
         gameObj.setPlayer1Score(1);
