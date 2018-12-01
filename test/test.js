@@ -90,3 +90,11 @@ describe('Score 4 - 4 Test', function() {
         assert.equal(gameObj.score(), "Duce");
     });
 });
+
+describe('Score 4 - 3 Test', function() {
+    it('should return Player1 Adv', function() {
+        gameObj.setPlayer1Score(4);
+        gameObj.setPlayer2Score(3);
+        assert.equal(gameObj.score(), "Player1 Adv");
+    });
+});
