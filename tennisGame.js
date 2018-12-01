@@ -28,10 +28,7 @@ var tennisGame = (function() {
             else if ((_player1Score >= 4) && (_player1Score - _player2Score >= 2)) {
                 return "Player1 Win";
             }
-            else if ((_player2Score >= 4) && (_player1Score <= 2)) {
-                return "Player2 Win";
-            }
-            else if ((_player2Score >=5) && (_player2Score - _player1Score === 2)) {
+            else if ((_player2Score >= 4) && (_player2Score - _player1Score >=2)) {
                 return "Player2 Win";
             }
             return "undefined";
