@@ -12,7 +12,7 @@ var tennisGame = (function() {
             if ((_player1Score >= 1) && (_player1Score <= 3) && (_player2Score === 0)) {
                 return _scoreMap[_player1Score] + "-Love";
             }
-            else if ((_player2Score >= 1) && (_player1Score === 0)) {
+            else if ((_player2Score >= 1) && (_player2Score <=3) && (_player1Score === 0)) {
                 return "Love-" + _scoreMap[_player2Score];
             }
             else if ((_player1Score >=1) && (_player1Score <=2) && (_player1Score === _player2Score)) {
@@ -30,7 +30,10 @@ var tennisGame = (function() {
             else if ((_player1Score >= 4) && (_player2Score <= 2)) {
                 return "Player1 Win";
             }
-       
+            else if ((_player2Score >= 4) && (_player1Score <= 2)) {
+                return "Player2 Win";
+            }
+
             return "Love-All";
         },
 
