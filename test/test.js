@@ -122,3 +122,11 @@ describe('Score 4 - 5 Test', function() {
         assert.equal(gameObj.score(), "Player2 Adv");
     });
 });
+
+describe('Score 4 - 0 Test', function() {
+    it('should return Player1 Win', function() {
+        gameObj.setPlayer1Score(4);
+        gameObj.setPlayer2Score(0);
+        assert.equal(gameObj.score(), "Player1 Win");
+    });
+});

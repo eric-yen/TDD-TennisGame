@@ -9,7 +9,7 @@ var tennisGame = (function() {
 
     return {
         score: function() {
-            if ((_player1Score >= 1) && (_player2Score === 0)) {
+            if ((_player1Score >= 1) && (_player1Score <= 3) && (_player2Score === 0)) {
                 return _scoreMap[_player1Score] + "-Love";
             }
             else if ((_player2Score >= 1) && (_player1Score === 0)) {
@@ -26,6 +26,9 @@ var tennisGame = (function() {
             }
             else if ((_player2Score >= 4) && (_player2Score - _player1Score === 1)) {
                 return "Player2 Adv";
+            }
+            else if ((_player1Score === 4) && (_player2Score ===0)) {
+                return "Player1 Win";
             }
        
             return "Love-All";
