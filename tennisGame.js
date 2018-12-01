@@ -21,9 +21,10 @@ var tennisGame = (function() {
             else if ((_player1Score >= 3) && (_player1Score === _player2Score)) {
                 return "Duce";
             }
-            else if ((_player1Score === 4) && (_player2Score === 3)) {
+            else if ((_player1Score >= 4) && (_player1Score - _player2Score === 1)) {
                 return "Player1 Adv";
             }
+       
             return "Love-All";
         },
 
