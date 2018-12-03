@@ -92,18 +92,18 @@ describe('Score 2 - 2 Test', function() {
 });
 
 describe('Score 3 - 3 Test', function() {
-    it('should return Duce', function() {
+    it('should return Deuce', function() {
         gameObj.setPlayer1Score(3);
         gameObj.setPlayer2Score(3);
-        assert.equal(gameObj.score(), "Duce");
+        assert.equal(gameObj.score(), "Deuce");
     });
 });
 
 describe('Score 4 - 4 Test', function() {
-    it('should return Duce', function() {
+    it('should return Deuce', function() {
         gameObj.setPlayer1Score(4);
         gameObj.setPlayer2Score(4);
-        assert.equal(gameObj.score(), "Duce");
+        assert.equal(gameObj.score(), "Deuce");
     });
 });
 

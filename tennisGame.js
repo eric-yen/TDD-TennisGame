@@ -18,11 +18,11 @@ var tennisGame = (function() {
         return (Math.abs(_player1Score - _player2Score) === 1) ? " Adv" : " Win";
     }
 
-    var isDuce = function() {
+    var isDeuce = function() {
         return ((_player1Score === _player2Score) && (_player1Score >= 3));
     }
 
-    var isSameScoreButNotDuce = function() {
+    var isSameScoreButNotDeuce = function() {
         return (_player1Score === _player2Score) && (_player1Score < 3);
     }
 
@@ -32,10 +32,10 @@ var tennisGame = (function() {
 
     return {
         score: function() {
-            if (isDuce()) {
-                return "Duce";
+            if (isDeuce()) {
+                return "Deuce";
             }
-            else if (isSameScoreButNotDuce()) {
+            else if (isSameScoreButNotDeuce()) {
                 return _scoreMap[_player1Score] + "-All"; 
             }
             else if (isNormalScore()) {
