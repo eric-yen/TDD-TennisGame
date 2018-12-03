@@ -10,18 +10,38 @@ var tennisGame = (function() {
     var _player1Score = 0;
     var _player2Score = 0;
 
+    var advancedPlayer = function() {
+        return ((_player1Score > _player2Score) ? _player1 : _player2);
+    }
+
+    var advOrWin = function() {
+        return (Math.abs(_player1Score - _player2Score) === 1) ? " Adv" : " Win";
+    }
+
+    var isDuce = function() {
+        return ((_player1Score === _player2Score) && (_player1Score >= 3));
+    }
+
+    var isSameScoreButNotDuce = function() {
+        return (_player1Score === _player2Score) && (_player1Score < 3);
+    }
+
+    var isNormalScore = function() {
+        return (_player1Score <= 3) && (_player2Score <= 3) && (_player1Score != _player2Score);
+    }
+
     return {
         score: function() {
-            if (this.isDuce()) {
+            if (isDuce()) {
                 return "Duce";
             }
-            else if (this.isSameScoreButNotDuce()) {
+            else if (isSameScoreButNotDuce()) {
                 return _scoreMap[_player1Score] + "-All"; 
             }
-            else if (this.isNormalScore()) {
+            else if (isNormalScore()) {
                 return _scoreMap[_player1Score] + "-" + _scoreMap[_player2Score];
             }
-            return this.advancedPlayer() + this.advOrWin();
+            return advancedPlayer() + advOrWin();
         },
 
         setPlayer1Score: function(score) {
@@ -30,26 +50,6 @@ var tennisGame = (function() {
 
         setPlayer2Score: function(score) {
             _player2Score = score;
-        },
-
-        advancedPlayer: function() {
-            return ((_player1Score > _player2Score) ? _player1 : _player2);
-        },
-
-        advOrWin: function() {
-            return (Math.abs(_player1Score - _player2Score) === 1) ? " Adv" : " Win";
-        },
-
-        isDuce: function() {
-            return ((_player1Score === _player2Score) && (_player1Score >= 3));
-        },
-
-        isSameScoreButNotDuce: function() {
-            return (_player1Score === _player2Score) && (_player1Score < 3);
-        },
-
-        isNormalScore: function() {
-            return (_player1Score <= 3) && (_player2Score <= 3) && (_player1Score != _player2Score);
         }
     }
 });
