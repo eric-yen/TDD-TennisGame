@@ -12,13 +12,13 @@ var tennisGame = (function() {
 
     return {
         score: function() {
-            if (_player1Score === _player2Score) {
-                if (_player1Score >= 3) {
-                    return "Duce";
-                }
+            if (this.isDuce()) {
+                return "Duce";
+            }
+            else if (this.isSameScoreButNotDuce()) {
                 return _scoreMap[_player1Score] + "-All"; 
             }
-            else if ((_player1Score <= 3) && (_player2Score <= 3)) {
+            else if (this.isNormalScore()) {
                 return _scoreMap[_player1Score] + "-" + _scoreMap[_player2Score];
             }
             return this.advancedPlayer() + this.advOrWin();
@@ -38,6 +38,18 @@ var tennisGame = (function() {
 
         advOrWin: function() {
             return (Math.abs(_player1Score - _player2Score) === 1) ? " Adv" : " Win";
+        },
+
+        isDuce: function() {
+            return ((_player1Score === _player2Score) && (_player1Score >= 3));
+        },
+
+        isSameScoreButNotDuce: function() {
+            return (_player1Score === _player2Score) && (_player1Score < 3);
+        },
+
+        isNormalScore: function() {
+            return (_player1Score <= 3) && (_player2Score <= 3) && (_player1Score != _player2Score);
         }
     }
 });
